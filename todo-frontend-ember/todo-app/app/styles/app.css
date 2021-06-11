@@ -1,0 +1,12 @@
+.completed {
+  text-decoration: line-through;
+  background-color:#FFFF00;
+}
+.displayInline{
+  margin-right:5%;
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

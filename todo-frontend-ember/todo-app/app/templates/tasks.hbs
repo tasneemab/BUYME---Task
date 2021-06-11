@@ -1,0 +1,35 @@
+
+{{outlet}}
+
+<div class="card mt-4">
+  <div class="card-header">
+    <h3>Tasks</h3>
+  </div>
+  <div class="list-group list-group-flush checked-list">
+    {{#each this.model as |item|}}
+    <div class="list-group-item">
+      <label>
+        <input class="form-check-input me-1" type="checkbox" value={{item.id}} checked={{item.completed}} onclick={{action 'updateTask' item.id}}>
+        {{#if item.completed}}
+        <span class="completed" id="{{item.id}}">
+          <LinkTo @route="tasks.edit" @model={{item.id}}><strong>{{item.id}}.</strong> &nbsp;&nbsp;{{item.task}}</LinkTo>
+        </span>
+        {{else}}
+        <span class="uncompleted" id="{{item.id}}">
+          <LinkTo @route="tasks.edit" @model={{item.id}}><strong>{{item.id}}.</strong> &nbsp;&nbsp;{{item.task}}</LinkTo>
+        </span>
+        {{/if}}
+      </label>
+      <button {{action 'deleteTask' item.id}} class="btn btn-outline-danger btn-sm d-inline-block" style="float:right;">
+        <strong>X</strong>
+      </button>
+
+    </div>
+    {{/each}}
+  </div>
+  <div class="card-footer text-muted">
+   <div class="displayInline"><strong>All:</strong> {{this.model.length}}</div>
+   <div class="displayInline"><strong>Completed:</strong> {{this.model.completedTasks}}</div>
+   <div class="displayInline"><strong>Uncompleted:</strong> {{this.model.uncompletedTasks}}</div>
+ </div>
+</div>

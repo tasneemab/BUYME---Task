@@ -1,0 +1,13 @@
+<h3 class="mt-2">Edit Task</h3>
+<form>
+  <div class="input-group" style="margin-bottom:1%;">
+    {{input type="text" class="form-control" value=model.task placeholder="Add Task..."}}
+     <div class="input-group-append">
+      <button type="submit" class="btn btn-success" {{action 'editTask' model.id}}>Add</button>
+     </div>
+  </div>
+  <div class="form-check" style="margin-bottom:1%;">
+    {{input type="checkbox" class="form-check-input" checked=model.completed}}
+    <label class="form-check-label">Completed</label>
+  </div>
+</form>
