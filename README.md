@@ -13,4 +13,4 @@ It's a CRUD app, you can add a new task, edit or delete an existing one and disp
 
 * Run ember serve for the frontend server
 * Run php artisan serve for the backend server
-*Must add your DB namein the env. file in the backend*
+ * Must add your DB namein the env. file in the backend*
